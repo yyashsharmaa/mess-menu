@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mess Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Mess Menu</h1>
+        <div class="menu-box">
+            <h2>{{ day }} - {{ meal }}</h2>
+            <p>{{ menu }}</p>
+        </div>
+        <form method="POST" class="menu-form">
+            <select name="day" required>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+            <select name="meal" required>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+            <button type="submit">Check Menu</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="back-btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>
